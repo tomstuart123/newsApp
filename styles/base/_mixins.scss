@@ -1,0 +1,19 @@
+// This file contains all application-wide Sass mixins.
+
+@mixin mq-tablet {
+    @media (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin mq-desktop {
+    @media (max-width: 950px) {
+        @content;
+    }
+}
+
+@mixin mq-large-phone {
+    @media (max-width: 400px) {
+        @content;
+    }
+}

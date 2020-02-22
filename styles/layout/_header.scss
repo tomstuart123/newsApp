@@ -1,0 +1,38 @@
+.landing-image {
+    background: url(../assets/background/balanceBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 60vh;
+
+    @include mq-desktop {
+        height: 45vh;
+    }
+
+}
+
+.landing-wrapper {
+    height: 40%;
+}
+
+.landing-wrapper-two {
+    height: 60%;
+}
+
+.landing-text-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 80%;
+}
+
+.landing-text-section h1 {
+    font-size: 2rem;
+    color: $light-colour;
+    font-weight: 600;
+}
+
+
+
+

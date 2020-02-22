@@ -1,0 +1,29 @@
+// This file contains all @font-family / sizing
+
+// note think about roboto for headers
+@import "../base/mixins";
+html {
+    font-size: 62.5%; 
+}
+
+h1, h2, h3, p, li, form, button, a{
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 22px;
+    color:$dark-colour;
+    font-family: 'Lato', serif;
+}
+
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p, button {
+    font-size: 1.8rem;
+    line-height: 25px;
+}

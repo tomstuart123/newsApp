@@ -1,0 +1,81 @@
+@import "../base/mixins";
+// nav section
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Lato, sans-serif;
+    position: relative;
+    padding-top: 30px; 
+
+}
+
+nav ul:nth-of-type(1) {
+    padding-top: 20px;
+    padding-left: 0;
+
+}
+
+
+nav li {
+
+    line-height: 15px;
+    list-style-type: none;
+    text-decoration: none;
+
+}
+
+nav a {
+    font-weight: bold;
+    color: $light-colour;;
+    text-decoration: none;
+    font-size: 2.4rem;
+}
+
+// mobile dropdown
+
+
+.dropdown {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    background: $light-colour;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    padding-left: 20px;
+    border-radius: 5%;
+    opacity: 0.9;
+}
+
+.dropdown-start {
+    display: none;
+    padding-left: 20px;
+}
+
+.dropdown li {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    list-style-type: none;
+    transition: font-size 0.5s;
+}
+
+.dropdown a {
+    color: $dark-colour-two;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown li {
+    font-size: 1.9rem;
+}
+
+.dropdown li:hover {
+    font-size: 2rem;
+
+}
