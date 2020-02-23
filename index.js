@@ -1,5 +1,4 @@
 
-
 const newsApp = {
 };
 
@@ -10,7 +9,43 @@ newsApp.currentArticles = 6;
 newsApp.pageLoad = function () {
     window.onload = function () {
         newsApp.getNewsHeadlines('top-headlines', '', 'country=us&');
+        newsApp.getTextAnalysis();
     }
+}
+
+newsApp.getTextAnalysis = () => {
+    newsApp.newsStore = [];
+    // pull main headlines
+    // const API_KEY = '4d9a7a8d7bf72865d0a6735aecde4bfc';
+    // const API_ID = '057b23f0'
+    // const baseURL = 'https://api.aylien.com/api/v1/';
+    // const articleURL = 'https://www.biography.com/news/frida-kahlo-bus-accident';
+    // const sentiment = 'sentiment?url=';
+    // let requestString = baseURL + sentiment + articleURL
+
+
+    const API_KEY = '4d9a7a8d7bf72865d0a6735aecde4bfc';
+    const API_ID = '057b23f0'
+    const baseURL = "https://api.aylien.com/api/v1/";
+    const articleURL = "https://www.biography.com/news/frida-kahlo-bus-accident";
+    const sentiment = "sentiment?url=";
+    requestString = baseURL + sentiment + articleURL;
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    requestString = proxyUrl + requestString 
+    console.log(requestString)
+
+    fetch(requestString, {
+        method: "GET",
+        headers: {
+            "X-AYLIEN-TextAPI-Application-Key": API_KEY,
+            "X-AYLIEN-TextAPI-Application-ID": API_ID,
+        }
+        })
+        .then(function (data) {
+            data.json().then(data => {
+                console.log(data)
+            })
+         })
 }
 
 newsApp.getNewsHeadlines = (search='', topic='', country='') => {
@@ -64,8 +99,6 @@ newsApp.displayHeadlines = (news, articleAmount) => {
             const headlineText = document.createTextNode(`${item.title}`);
             newImg.setAttribute("src", `${item.urlToImage}`);
             newATag.setAttribute('href', `${item.url}`);
-
-            console.log('added')
             // append text to h2 then h2 and and Image tag to div. Then append div to section ready
             newH2.appendChild(headlineText);
             imgDiv.appendChild(newImg)
